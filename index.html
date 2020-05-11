@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Visual Essay: Visitor from Star</title>
+	<link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://unpkg.com/intersection-observer"></script>
+	<script src="https://unpkg.com/scrollama"></script>
+</head>
+<style type="text/css">
+	body, html {
+		top:0;
+		left:0;
+		margin:0;
+		font-family:'Helvetica Neue', sans-serif;
+	}
+	nav	{
+		background-color:white;
+		position:fixed;
+		width:100%;
+		display:flex;
+		justify-content: center;
+		align-items:center;
+		border-bottom:0.05em solid black;
+		z-index:100;
+	}
+	.title {
+		height:80vh;
+		color:white;
+		background-color:black;
+/*		background-image:url('https://i.pinimg.com/originals/7f/43/1c/7f431c9e6991b1a83d79e359dc09c99d.gif');*/
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: left top;
+		background-size: auto 100%;
+	}
+	.title h1 {
+		font-size:2em;
+	}
+	.title h2 {
+		font-size:1em;
+		font-weight:400;
+	}
+	.header {
+		text-align:center;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		border:0.5em solid black;
+		padding:5% 0%;
+		animation: fadeIn 0.5s ease-in-out;
+	}
+	.header h1{
+		font-family:'Helvetica Neue', sans-serif;
+		font-weight:500;
+		margin:0;
+	}
+	.header h2 {
+		margin:0;
+	}
+	.sticky {
+		float:right;
+		top:25%;
+		position:sticky;
+		width:50%;
+		display:inline-flex;
+					background-color:white;
+	}
+	.leftside{
+		background-color:black;
+		color:white;
+		width: 30%;
+    	padding: 5% 10% 5% 5%;
+	}
+	.progressive{
+		width:100%;
+		display:block;
+		margin-bottom:100%!important;
+	}
+	.end {
+		margin-bottom:5%!important;
+	}
+	#counter {
+		width:100%;
+		font-size:10em;
+		text-align:center;
+		margin:0;
+		padding:0%;
+		line-height:1em;
+		font-weight: 800;
+    	letter-spacing: -0.05em;
+	}
+	#counter h2{
+		text-align:center;
+	}
+	.text {
+		margin:5%;
+		line-height:2em;
+		opacity:0;
+		margin-top:10%;
+		transition:0.5s ease-in-out;
+	}
+	.text h1 {
+		font-size:2em;
+		letter-spacing:-0.05em;
+		line-height:1em;
+		font-weight:900;
+		width:60%;
+	}
+	.text h2 {
+		font-weight:400;
+		font-size:1em;
+		font-style:italic;
+	}
+	.sticky h1 {
+		width:100%;
+		font-size:3em;
+	}
+	.sticky h2 {
+		font-size:0.8em;
+		text-transform:uppercase;
+		letter-spacing:0.1em;
+	}
+	.center_aligner {
+		overflow:none;
+		width:100%;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		margin:2% 0%;
+	}
+	iframe {
+		border:0.5em solid black;
+		width:900px;
+		height:500px;
+	}
+	.tableauPlaceholder{
+		width:50%;
+		z-index:0;
+	}
+	img{
+		text-align:left;
+		margin-left:5%;
+		display:inline-block;
+		border:0.5em solid black;
+	}
+	.caption {
+		font-size:0.8em;
+		color:#666666;
+		margin-left:5%;
+	}
+	.small {
+		width:50%;
+	}
+	.large {
+		width:80%;
+		display:block;
+	}
+	@keyframes fadeIn {
+		0%{
+			opacity:0;
+		}
+		100%{
+			opacity:1;
+		}
+	}
+	@media screen and (max-width:767px){
+		.sticky {
+	/*		bottom:0;*/
+			width:50%;
+			float:none;
+			margin:auto;
+			display:flex;
+			line-height:2em;
+		}
+		.sticky h1 {
+			font-size:2em;
+			line-height:2em;
+		}
+		.sticky h2 {
+			font-size:0.5em;
+		}
+		#counter {
+			font-size:5em;
+		}
+		.leftside {
+			width: 85%;
+    		padding: 5% 10% 5% 5%;
+		}
+		.small {
+			width:80%;
+		}
+		.title {
+			height:80vh;
+		}
+		.text h1 {
+			font-size:2.5em;
+			width:80%;
+		}
+		.text {
+			margin:10% 5%;
+		}
+		iframe {
+			height:300px;
+		}
+
+	}
+</style>
+<body>
+
+<!-- nav -->
+<nav>
+	<h3>A Simple Sketh of Current Circumstances on Space Exploration
+</h3>
+</nav>
+
+<!-- text -->
+<div class='header title step'>
+	<div class='aligner'>
+		<h1>Visitor from Star: NASA, ALIENS & CONSPARICY</h1>	
+	</div>
+</div>
+
+<!-- image 1 -->
+<div class='center_aligner'>
+	<!-- change line 120 if you want to change the size of the image -->
+	<img src="images/1.png" height="200" width="1500"> 	
+</div>
+
+</div>
+<div class='text'>
+	<h2>Rosie Sun | May 10, 2020 Updated 5:00 p.m. ET</h2>	
+	The universe holds endless possibilities making it an interesting subject of study. Organizations such as NASA have been at the forefront of research regarding the universe to provide the earth with more information regarding what lies beyond our atmosphere. Space studies and operations have been crucial to explaining the beginning of the universe. Theoretical concepts such as the Big Bang theory have received massive support due to the emergence of new evidence due to space exploration. Space research has made significant progress over the years, making it necessary to invest in space exploration activities. 
+    
+    Trace back to history, our obsession on alien motivates human to having deeper developments in many fields such as since, political and art. 
+</div>
+
+<div class='text'>
+	<h1>"I don't think the human race will survive the next thousand years, unless we spread into space. There are too many accidents that can befall life on a single planet. But I'm an optimist. We will reach out to the stars."- STEPHEN HAWKING, The Daily Telegraph, October 16, 2001</h1>
+
+	Studies on black holes experienced a breakthrough in 2019, as NASA documented the first image of a black hole. This has been extremely useful considering that our galaxy has its black hole – Sagittarius A. NASA’s twin Voyager probe also discovered the existence of a plasma shield in interstellar space that protects the solar system from cosmic rays (Wall 2019). Astronomers also discovered an intact planet orbiting a dwarf star in late December 2019. It was initially thought the collapse of a star would result in the death of the planet orbiting around it (Wall 2019). However, the discovery showed otherwise. NASA’s Wilkinson Microwave Anisotropy Probe (WMAP) also discovered evidence to support the nearly flat geometry of the universe. This has been useful in resolving the flatness problem associated with the Big Bang theory. The findings of the program were evidence supporting the cosmic inflation theory geometry (Wollack, 2010). 
+</div>
+
+<!-- image 2 -->
+<div class='left_aligner'>
+	<!-- change line 120 if you want to change the size of the image -->
+	<img src="images/2.png" height="150" width="800">
+	<div class='left_aligner'>
+	<div class='caption'>(Nova First Images of a Black Hole from the Event Horizon Telescope ^ )</div>	 	
+</div>
+
+<div class='text'>
+	<h1>NASA space exploration budget has increased to $81 billion by 2019 and is estimated to continue rising to $93 billion between 2023 and 2027.</h1>
+	A look at the budgetary allocations shows that majority of the budget is spent on science, space operation, and exploration. When it comes to space exploration and operation, orbital infrastructure receives a great amount of funding. This is evident in increased funding in ISS programs and Lunar Orbital Platform-Gateway. Mars exploration is another significant area for NASA – about $1.5 billion is allocated to prepare for launch missions (Boucher 2018). Other deep space exploration activities have received a low budgetary allocation of about $1.4 billion (Boucher 2018).  
+</div>
+
+<!-- tableau public -->
+<div class='center_aligner'>
+	<!-- insert tableau public embed link below this line -->
+<div class='tableauPlaceholder' id='viz1589152536736' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;9F&#47;9FC74C9DM&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;9FC74C9DM' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;9F&#47;9FC74C9DM&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1589152536736');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</div>
+
+<div class='text'>
+    <p>The expenditure on space exploration has been a subject of debate over the years. Most people argue that the billions spent on space exploration projects could be spent dealing with real-life issues here on earth. However, a fiscal examination of U.S. government expenditure reveals that NASA account for less than one percent of the national budget. For instance, NASA’s $16.143 billion budget in 2007 accounted for 0.58% of the national budget (Brooks 2007). This is a small proportion considering space exploration was allocated about 5% of the national budget in the 1960s. Social programs take more than a trillion of the national budget compared to the meager billions spent on NASA programs.</p>
+   
+	<p>NASA’s technological contributions have been one of the major justifications for the high budgets. NASA developed the spinoff program to highlight these technologies. GPS single correction software developed by NASA, for instance, has benefitted various industries, including agriculture, telecommunication, and aircraft navigation (NASA 2019). High-pressure tanks that are used by firefighters and in ICU units are also an invention founded on NAS technology (NASA 2019). The aircrafts industry has also benefitted from battery pack technology that was invented as scientists attempted to resolve space flight issues (NASA 2019). Satellite technology, another spinoff of space technology, has benefitted people through its utilization in monitoring the weather and broadcasting television programs.</p>
+</div>
+
+
+
+<!-- counter -->
+<div class='header sticky step' id='dynamic_sticky1'>
+</div>
+
+
+<div class='leftside'>
+
+	<div class='text progressive'>
+	<h1>Existence of Extraterrestrial Life</h1>
+	Despite the advancement in space exploration, one of the issues that remains a hot topic is the existence of extraterrestrial life. Very few people believe in the existence of aliens. Mainstream media may be one of the contributors to this due to the deceptive depiction of extraterrestrial life. Scientists supporting the possibility of extraterrestrial life propose that people should expect the unexpected. 
+	</div>
+
+	<div class='text progressive'>
+	<h1>Evidence of the existence of aliens</h1>
+Sightings of unidentified flying objects (UFOs) are the major evidence of the existence of aliens. In 2017, the New York Times unveiled a Pentagon program that investigated the existence of UFOs (Bartels). Reports of UFO sighting date back to the second millennium BC. There have been reports of fiery discs being observed in the sky. In 2004, a U.S. fighter pilot reported having encountered a UFO that resembled an elongated egg (Picheta 2020). Such sightings are evidence that we are not alone in the universe.	</div>
+
+	<div class='text progressive end'>
+	<h1>Popularizing Space Science</h1>
+	Despite the public doubt, a good amount of people still feel netural on this topic. There many evidences which support that we are not the only species in the universe. Popularizing space science is the next focus for human to acknowledge the truth of the environment we are in this era.
+	</div>
+
+</div>
+
+</body>
+<script type="text/javascript">
+
+// instantiate the scrollama
+const scroller = scrollama();
+const scroller2 = scrollama();
+
+scroller
+  .setup({
+    step: ".text",
+    offset: 0.9,
+  })
+  .onStepEnter(response => {
+    // { element, index, direction }
+    el=response.element;
+    el.style.opacity=1;
+    el.style.marginTop='5%';    
+  })
+  .onStepExit(response => {
+    // { element, index, direction }  
+    el=response.element;
+  })
+  ;
+ // setup resize event
+window.addEventListener("resize", scroller.resize);
+
+scroller2
+  .setup({
+    step: ".progressive",
+    offset: 0.6,
+  })
+  .onStepEnter(response => {
+    // { element, index, direction }
+    el=response.element;
+    el.style.opacity=1;
+    if(response.index==0 || 1 || 2){
+    	stick('dynamic_sticky1')
+    	response.direction=='down'
+    	if(response.index==0){
+    		count(1,35,1,'Strongly Disbelieve','the conspiracy theory of Area 51','dynamic_sticky1')
+    	} else if (response.index==1){
+    		count(1,9,1,'Strongly Believe','the conspiracy theory of Area 51','dynamic_sticky1')
+    	} else if (response.index==2){
+    		count(0,21,.1,'Neither of them','the conspiracy theory of Area 51','dynamic_sticky1')
+    	}
+    }
+  })
+  .onStepExit(response => {
+    // { element, index, direction }  
+    el=response.element;
+    console.log(response.index)
+    if(response.index==2){
+    	unstick('dynamic_sticky1')
+    }
+    el.style.opacity=0;
+  })
+  ;
+ // setup resize event
+window.addEventListener("resize", scroller2.resize);
+
+function count(number1, number2, step, title, label, location_id, prefix='+', suffix='%'){
+	target = document.querySelector('#'+location_id)
+	console.log(target)
+	let text=number1;
+
+	setInterval(function(){
+		if(text!=number2){
+			num = text+step
+			if(num % 1 == 0){
+				text = num
+			} else {
+				text = parseFloat(num.toFixed(2))
+			}
+			target.innerHTML="<div class='aligner'><h1>"+title+"</h1><div id='counter'>"+prefix+text+suffix+"</div><h2>"+label+"</h2></div>"
+		}
+	}, 30);
+}
+
+function stick(location_id){
+	target = document.querySelector('#'+location_id)
+	target.style.position="sticky"
+}
+
+function unstick(location_id){
+	target = document.querySelector('#'+location_id)
+	target.style.position="relative"
+}
+
+</script>
+
+</html>
